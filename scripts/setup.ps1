@@ -6,5 +6,8 @@ git commit -m "Initial commit"
 git branch -M main
 git remote add origin
 
+dotnet new webapp -o src/myApp
+dotnet new sln
+dotnet sln add src/myApp
 
 
