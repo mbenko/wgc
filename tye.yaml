@@ -1,0 +1,20 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: wgc-poc
+services:
+- name: myapp
+  project: src/myApp/myApp.csproj
+  env:
+    - name: ASPNETCORE_ENVIRONMENT
+      value: Development
+    - name: EnvName
+      value: Tye
+    - name: ApiUrl
+      value: http://myapi/weatherforecast
+  
+- name: myapi
+  project: src/myApi/myApi.csproj

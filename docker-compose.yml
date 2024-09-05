@@ -1,0 +1,21 @@
+services:
+  myapp:
+    build:
+      context: src/myapp/.
+      dockerfile: Dockerfile
+    image: myapp:v7
+    ports:
+      - 5100:80
+    environment:
+      - EnvName=DockerCompose
+      - ApiUrl=http://myapi/weatherforecast
+    depends_on:
+      - myapi
+
+  myapi:
+    build:
+      context: src/myApi/.
+      dockerfile: Dockerfile
+    image: myapi:v7
+    ports:
+      - 5200:80
