@@ -14,6 +14,15 @@ az login
 #    7. Run from ACR in Azure Container Apps
 #    8. Run from ACR in AKS
 
+## Demos vNext
+#   1. Add API and call it, run from VSCode
+#   2. Run via Tye
+#   3. az webapp up
+#   4. Docker
+#   5. azd init and up
+#   6. Aspire sample
+#   7. Aspirate Me
+
 
 ## Event Specific things
 $evtName = "myEvent"

@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{191F0FBE-7E0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myApp", "src\myApp\myApp.csproj", "{7DE41BC6-294A-40E6-B0B6-ACB6F0E8E7D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myApi", "src\myApi\myApi.csproj", "{C91636F2-1D47-4A73-8A9F-AB83A7432069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myApi", "src\myApi\myApi.csproj", "{C91636F2-1D47-4A73-8A9F-AB83A7432069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wgc-poc.AppHost", "src\wgc-poc.AppHost\wgc-poc.AppHost.csproj", "{38C983C6-AAE5-4A73-9B39-71B1197433F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wgc-poc.ServiceDefaults", "src\wgc-poc.ServiceDefaults\wgc-poc.ServiceDefaults.csproj", "{5ECB3D9C-97B6-4526-BD0D-40E70FE9B614}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{C91636F2-1D47-4A73-8A9F-AB83A7432069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C91636F2-1D47-4A73-8A9F-AB83A7432069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C91636F2-1D47-4A73-8A9F-AB83A7432069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C983C6-AAE5-4A73-9B39-71B1197433F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C983C6-AAE5-4A73-9B39-71B1197433F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C983C6-AAE5-4A73-9B39-71B1197433F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C983C6-AAE5-4A73-9B39-71B1197433F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ECB3D9C-97B6-4526-BD0D-40E70FE9B614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECB3D9C-97B6-4526-BD0D-40E70FE9B614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECB3D9C-97B6-4526-BD0D-40E70FE9B614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECB3D9C-97B6-4526-BD0D-40E70FE9B614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
