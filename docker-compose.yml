@@ -1,0 +1,18 @@
+services:
+  myapp:
+    image: ${DOCKER_REGISTRY-}myapp
+    build:
+      context: .
+      dockerfile: src/myApp/Dockerfile
+    environment:
+      - EnvName=Docker
+      - ApiUrl=http://myapi/weatherforecast
+    depends_on:
+      - myapi
+
+  myapi:
+    image: ${DOCKER_REGISTRY-}myapi
+    build:
+      context: .
+      dockerfile: src/myApi/Dockerfile
+
