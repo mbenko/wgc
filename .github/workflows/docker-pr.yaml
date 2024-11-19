@@ -1,0 +1,24 @@
+name: Docker build a PR
+
+on:
+  push:
+    branches:
+    - '!main'
+  pull_request:
+    branches:
+    - '**'
+    paths:
+    - 'infra*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Docker build & push, kubectl apply
+        run: |
+          docker build -t vsl22-dev-pr:${{ github.sha }} .

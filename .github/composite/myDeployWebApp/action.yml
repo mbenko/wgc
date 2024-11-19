@@ -1,0 +1,56 @@
+name: 'myWebApp-Deploy'
+description: 'deploy azure web app'
+inputs:
+  rg-name:
+    description: 'Name of Resource Group'
+    required: true
+  app-name:
+    description: 'Name of Web App'
+    required: true
+  webapp-package: 
+    description: 'Path of WebApp Package'
+    required: true
+  credentials: 
+    description: 'Azure Credentials' 
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+  - name: Download artifact from build job
+
+    uses: actions/download-artifact@v2
+    with:
+      name: webapp
+      path: ${{ inputs.webapp-package}}
+
+  # Log into iac
+  - uses: azure/login@v1
+    with:
+      creds: ${{ inputs.credentials }}
+      enable-AzPSSession: true
+
+  - uses: aliencube/publish-profile-actions@v1
+    id: publishprofile
+    env:
+      AZURE_CREDENTIALS: ${{ inputs.credentials}}
+    with:
+      resourceGroupName: ${{inputs.rg-name}}
+      appName: ${{inputs.app-name}}    
+
+  - name: Deploy to Azure WebApp
+    uses: azure/webapps-deploy@v2
+    with:
+      app-name: ${{ inputs.app-name }}
+      package: ${{ inputs.webapp-package }}
+      publish-profile: ${{steps.publishprofile.outputs.profile}}
+
+  - uses: aliencube/publish-profile-actions@v1
+    name: Reset publishprofile
+    env:
+      AZURE_CREDENTIALS: ${{ inputs.credentials}}
+    with:
+      resourceGroupName: ${{inputs.rg-name}}
+      appName: ${{inputs.app-name}}   
+      reset: true
+
